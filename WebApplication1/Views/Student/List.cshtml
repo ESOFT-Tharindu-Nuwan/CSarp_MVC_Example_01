@@ -1,0 +1,40 @@
+﻿@model IList<StudentModel>;
+
+<div>
+    <h1>Students List</h1>
+    @* <h2>@ViewBag.Message</h2> *@
+    @* <h2>@ViewBag.AAA</h2> *@
+
+    @* <h3>@ViewData["Message"]</h3> *@
+
+    @* <h2>@Model.Id</h2> *@
+    @* <h2>@Model.Name</h2> *@
+
+    
+    @foreach(var student in Model)
+    {
+        <ul class="pb-2">
+            <li>Student Id : @student.Id</li>
+            <li>Student Name : @student.Name</li>
+        </ul>
+    }
+
+    <h3>Studens Table</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var student in Model)
+            {
+               <tr>
+                   <td scope="row">@student.Id</td>
+                   <td>@student.Name</td>
+               </tr>
+            }
+        </tbody>
+    </table>
+</div>
