@@ -1,0 +1,28 @@
+﻿@model IList<BookModel>;
+
+<div class="text-center">
+	Book Management
+</div>
+
+<div>
+    <h3>Books Table</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Book ID</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td scope="row">@book.BookId</td>
+                    <td>@book.Name</td>
+                    <td>@book.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
